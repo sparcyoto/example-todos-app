@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": " NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@copilotkit/react-core": "^1.4.1",
+    "@copilotkit/backend": "^0.37.0",
+    "@copilotkit/react-core": "^1.4.3",
     "@copilotkit/react-textarea": "^1.4.1",
     "@copilotkit/react-ui": "^1.4.1",
     "@copilotkit/runtime-client-gql": "^1.1.0",
