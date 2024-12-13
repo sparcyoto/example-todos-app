@@ -1,26 +1,26 @@
-import { OpenAIStream, StreamingTextResponse } from "ai";
-import { Configuration, OpenAIApi } from "openai-edge";
-
-const config = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(config);
+import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  const demoObject = {
-    message: "This is a demo response",
-    status: "success",
-    data: {
-      id: 1,
-      name: "Demo Task",
-      description: "This is a demo task description",
-    },
-  };
+  try {
+    const body = await req.json();
 
-  return new Response(JSON.stringify(demoObject), {
-    headers: {
-      "Content-Type": "application/json",
-      "Cache-Control": "max-age=600, s-maxage=600",
-    },
-  });
+    // Here you can process the chat message and generate a response
+    // For example, you might want to:
+    // 1. Call an AI service
+    // 2. Process the message
+    // 3. Return a response
+
+    const response = {
+      role: "assistant",
+      content: "This is a sample response. Replace with actual AI processing.",
+    };
+
+    return NextResponse.json(response);
+  } catch (error) {
+    console.error("Chat API error:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
+  }
 }

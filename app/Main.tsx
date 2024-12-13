@@ -65,11 +65,14 @@ const App: React.FC = () => {
       id: "5",
       parts: [
         {
-          type: MessagePartType.TOOL_REQUEST,
-          value: JSON.stringify({
+          type: MessagePartType.TOOL_RESPONSE,
+          value: {
             tool: "calculator",
-            input: "2 + 2",
-          }),
+            result: {
+              value: "21312313",
+              description: "it look like this",
+            },
+          },
         },
       ],
       author: {

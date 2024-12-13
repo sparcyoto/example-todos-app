@@ -1,5 +1,6 @@
 "use client";
 import CustomChat from "./CustomChat";
+import { CopilotKit } from "@copilotkit/react-core";
 
 export default function RootLayout({
   children,
@@ -8,7 +9,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {/* <CopilotKit runtimeUrl="/api/chat"> */}
+        {/* <CustomChat /> */}
+        {/* </CopilotKit> */}
+        {children}
+      </body>
     </html>
   );
 }
