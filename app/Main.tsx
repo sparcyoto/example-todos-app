@@ -61,6 +61,41 @@ const App: React.FC = () => {
       },
       createdAt: new Date(),
     },
+    {
+      id: "5",
+      parts: [
+        {
+          type: MessagePartType.TOOL_REQUEST,
+          value: JSON.stringify({
+            tool: "calculator",
+            input: "2 + 2",
+          }),
+        },
+      ],
+      author: {
+        role: AuthorRole.ASSISTANT,
+      },
+      createdAt: new Date(),
+    },
+    {
+      id: "6",
+      parts: [
+        {
+          type: MessagePartType.TOOL_RESPONSE,
+          value: {
+            tool: "calculator",
+            result: {
+              value: "4",
+              description: "The result of the calculation",
+            },
+          },
+        },
+      ],
+      author: {
+        role: AuthorRole.SYSTEM,
+      },
+      createdAt: new Date(),
+    },
   ]);
 
   return (
